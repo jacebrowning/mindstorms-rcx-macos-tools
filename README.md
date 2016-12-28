@@ -12,11 +12,7 @@ NQC is provided as a simple command line program which acts as a compiler and a 
 
 Follow these simple steps and you'll be able to enjoy programming your old RCX brick on a modern Intel Mac.
 
-**The only requirement is a Serial to USB adapter** to connect the IR Tower to your computer.  
-Find a cheap one based on the **PL2303** chip and install the kernel extension:  
-http://www.xbsd.nl/2011/07/pl2303-serial-usb-on-osx-lion.html
-
-(I don't know if NQC works with the USB IR Tower on OS X since I only have the serial version)
+USB Connection just works. For Serial Connection _The only requirement is a Serial to USB adapter_ to connect the IR Tower to your computer. Find a cheap one based on the **PL2303** chip and install the kernel extension: http://www.xbsd.nl/2011/07/pl2303-serial-usb-on-osx-lion.html
 
 ##1) Building NQC from sources
 
@@ -34,13 +30,17 @@ sudo make install
 
 If the build succeeds, the nqc executable will be installed globally.
 
-##2) Uploading the official LEGO firmware
+##2) Find the serial/usb port
 
 Find the name of your serial port:
 ```sh
 ls /dev/cu.*
 ```
-This command will return a list of available devices. Look for something like "/dev/cu.PL2303-XXXX" and write it down.
+This command will return a list of available devices. Look for something like `/dev/cu.PL2303-XXXX` and write it down. You will need this on all nqc command with the flag `-S` (ex: `-S/dev/cu.PL2303-XXXX`)
+
+For USB connection you should use `usb` instead of `/dev/cu.PL2303-XXXX`. ie: `-Susb`
+
+##3) Uploading the official LEGO firmware
 
 I provide 3 LEGO firmware in this repository:
 
@@ -50,13 +50,19 @@ I provide 3 LEGO firmware in this repository:
 
 We will use firm0328.lgo for now.
 
-Send it to your brick:
+Send it to your brick (Serial):
 ```sh
 nqc -S/dev/cu.PL2303-XXXX -firmware firmwares/firm0328.lgo
 ```
+
+Send it to your brick (USB):
+```sh
+nqc -Susb -firmware firmwares/firm0328.lgo
+```
+
 This will take a few minutes.
 
-##3) Send a test program to the RCX
+##4) Send a test program to the RCX
 
 I provide some example programs (from the NQC website) in the /examples folder
 
