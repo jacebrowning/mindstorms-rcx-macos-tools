@@ -1,0 +1,13 @@
+location: .
+
+sources:
+  - repo: https://github.com/jverne/nqc
+    name: nqc
+    rev: master
+    type: git
+
+sources_locked:
+  - repo: https://github.com/jverne/nqc
+    name: nqc
+    rev: 21c24ec1e520c736ce78e33e4c0dafca887fc2b7
+    type: git
