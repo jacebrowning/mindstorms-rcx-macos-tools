@@ -37,7 +37,8 @@ There are 3 LEGO firmwares in this repository:
 
 **firm0309.lgo**: RCX firmware version 3.09 - Provided with RCX 1.0 & 1.5
 **firm0328.lgo**: RCX firmware version 3.28 - Provided with RCX 2.0
-**firm0332.lgo**: RCX firmware version 3.32 - Latest firmware
+**firm0332.lgo**: RCX firmware version 3.32 - Latest firmware from LEGO
+**fast0612.lgo**: Experimental firmware that is [100x faster](https://pbrick.info/index.html-p=74.html)
 
 We will use **firm0328.lgo** for now.
 

@@ -9,7 +9,7 @@ nqc/bin/nqc:
 
 .PHONY: test
 test: install
-	nqc -Susb -TRCX2 -d -pgm 1 examples/music.nqc
+	nqc -Susb -TRCX2 -d -pgm 1 examples/music.nqc -run
 
 .PHONY: clean
 clean:
